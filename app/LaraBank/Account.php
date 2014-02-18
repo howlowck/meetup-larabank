@@ -18,7 +18,10 @@ class Account {
 
 	public function displayAmount($type = 'dogecoins')
 	{
-
+		if ($this->dogecoins == 0) {
+			return 'Sorry, your account is empty at the moment';
+		}
+		return "You have {$this->dogecoins} dogecoins";
 	}
 
 	public function deposit($amount)
