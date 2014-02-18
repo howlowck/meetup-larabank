@@ -13,17 +13,17 @@ class Account {
 
 	public function getDogecoinsAmount()
 	{
-
+		return $this->$dogecoins;
 	}
 
-	public function displayAmount($type)
+	public function displayAmount($type = 'dogecoins')
 	{
 
 	}
 
 	public function deposit($amount)
 	{
-
+		$this->dogecoins = $this->dogecoins + $amount;
 	}
 
 }
