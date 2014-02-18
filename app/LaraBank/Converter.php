@@ -8,8 +8,8 @@ class Converter {
 
 	}
 
-	public convertDogecoinToUSD($amount)
+	public function convertDogecoinToUSD($amount)
 	{
-
+		return $amount * $this->dogecoinToUSD;
 	}
 }
