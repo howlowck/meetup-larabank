@@ -7,7 +7,8 @@ class Account {
 
 	public function __construct($userName, $amount)
 	{
-
+		$this->$userName = $userName;
+		$this->$dogecoins = $amount;
 	}
 
 	public function getDogecoinsAmount()
