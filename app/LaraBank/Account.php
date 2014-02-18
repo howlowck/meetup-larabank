@@ -1,4 +1,4 @@
-<?php namespace \LaraBank;
+<?php namespace LaraBank;
 
 class Account {
 	protected $accountNumber;
@@ -10,12 +10,12 @@ class Account {
 
 	}
 
-	public function amountInDogecoin()
+	public function getDogecoinsAmount()
 	{
 
 	}
 
-	public function amountInUSD()
+	public function displayAmount($type)
 	{
 
 	}
