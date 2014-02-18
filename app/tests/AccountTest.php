@@ -1,6 +1,7 @@
 <?php
 
 use LaraBank\Account;
+use LaraBank\Converter;
 
 class AccountTest extends PHPUnit_Framework_TestCase {
 	public function testCreateNewAccountInstanceOfAccount()
@@ -23,5 +24,10 @@ class AccountTest extends PHPUnit_Framework_TestCase {
 	{
 		$account = new Account('Hao', 20);
 		$this->assertEquals('You have 20 dogecoins', $account->displayAmount());
+	}
+	public function testDisplayAmountMessageTypeUSD()
+	{
+		$account = new Account('Hao', 10, new Converter());
+		$this->assertEquals('You have 23 USD', $account->displayAmount('USD'));
 	}
 }

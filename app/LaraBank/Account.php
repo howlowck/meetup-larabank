@@ -5,10 +5,11 @@ class Account {
 	protected $userName;
 	protected $dogecoins;
 
-	public function __construct($userName, $amount)
+	public function __construct($userName, $amount, Converter $converter = null)
 	{
 		$this->userName = $userName;
 		$this->dogecoins = $amount;
+		$this->converter = $converter;
 	}
 
 	public function getDogecoinsAmount()
@@ -20,6 +21,10 @@ class Account {
 	{
 		if ($this->dogecoins == 0) {
 			return 'Sorry, your account is empty at the moment';
+		}
+		if ($type == 'USD') {
+			$usd = $this->converter->convertDogecoinToUSD($this->dogecoins);
+			return "You have $usd USD";
 		}
 		return "You have {$this->dogecoins} dogecoins";
 	}
