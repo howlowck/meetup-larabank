@@ -18,6 +18,9 @@
 		]
 		
 	},
+	"require-dev": {
+        "mockery/mockery": "dev-master@dev"
+    },
 	"scripts": {
 		"post-install-cmd": [
 			"php artisan clear-compiled",
