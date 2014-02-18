@@ -15,9 +15,10 @@
 			"app/database/seeds",
 			"app/tests/TestCase.php"
 		],
-		"psr-0": [
-			"app/LaraBank"
-		]
+		"psr-0": {
+			"LaraBank": "app/LaraBank"
+		}
+		
 	},
 	"scripts": {
 		"post-install-cmd": [
