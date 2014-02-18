@@ -7,13 +7,13 @@ class Account {
 
 	public function __construct($userName, $amount)
 	{
-		$this->$userName = $userName;
-		$this->$dogecoins = $amount;
+		$this->userName = $userName;
+		$this->dogecoins = $amount;
 	}
 
 	public function getDogecoinsAmount()
 	{
-		return $this->$dogecoins;
+		return $this->dogecoins;
 	}
 
 	public function displayAmount($type = 'dogecoins')
