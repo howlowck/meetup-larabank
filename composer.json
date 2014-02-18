@@ -13,11 +13,9 @@
 			"app/models",
 			"app/database/migrations",
 			"app/database/seeds",
-			"app/tests/TestCase.php"
-		],
-		"psr-0": {
-			"LaraBank": "app/LaraBank"
-		}
+			"app/tests/TestCase.php",
+			"app/LaraBank"
+		]
 		
 	},
 	"scripts": {
