@@ -20,10 +20,10 @@ class Account {
 
 	public function displayAmount($type = 'dogecoins')
 	{
-		if ($this->dogecoins == 0) {
+		if ($this->dogecoins === 0) {
 			return 'Sorry, your account is empty at the moment';
 		}
-		if ($type == 'USD') {
+		if ($type === 'USD') {
 			$usd = $this->converter->convertDogecoinToUSD($this->dogecoins);
 			return "You have $usd USD";
 		}
