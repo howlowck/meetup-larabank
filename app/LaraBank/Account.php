@@ -1,15 +1,24 @@
 <?php namespace LaraBank;
 
+use LaraBank\Converter;
+
 class Account {
 	protected $accountNumber;
 	protected $userName;
 	protected $dogecoins;
 	protected $converter;
 
-	public function __construct($userName, $amount, $converter = null)
+	public function __construct($userName, $amount, Converter $converter = null)
 	{
 		$this->userName = $userName;
 		$this->dogecoins = $amount;
+		if (! is_null($converter)) {
+			$this->converter = $converter;
+		}
+	}
+
+	public function setConverter(Converter $converter)
+	{
 		$this->converter = $converter;
 	}
 

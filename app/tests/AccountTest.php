@@ -25,7 +25,7 @@ class AccountTest extends PHPUnit_Framework_TestCase {
 	public function testDisplayAmountIfUserHasNoAmount()
 	{
 		$account = new Account('Hao', 0);
-		// $this->assertEquals('Sorry, your account is empty at the moment', $account->displayAmount());
+		$this->assertEquals('Sorry, your account is empty at the moment', $account->displayAmount());
 	}
 
 	public function testDisplayAmountIfUserHasSomeAmount()
@@ -40,6 +40,7 @@ class AccountTest extends PHPUnit_Framework_TestCase {
 		$account->deposit(-10);
 		$this->assertEquals(20, $account->getDogecoinsAmount());
 	}
+
 	/**
 	 * @expectedException InvalidArgumentException
 	 * @expectedExceptionMessage give me
@@ -52,16 +53,18 @@ class AccountTest extends PHPUnit_Framework_TestCase {
 
 	public function testDisplayAmountToUSD()
 	{
+		$account = new Account('Hao', 10);
 		$converter = new Converter();
-		$account = new Account('Hao', 10, $converter);
+		$account->setConverter($converter);
 		$msg = $account->displayAmount('USD');
-		$this->assertContains('You have 23 USD', $msg);
+		$this->assertContains('You have 25 USD', $msg);
 	}
 	public function testDisplayAmountToUSDMocked()
 	{
+		$account = new Account('Hao', 10);
 		$converter = m::mock('\LaraBank\Converter');
-		$account = new Account('Hao', 10, $converter);
 		$converter->shouldReceive('convertDogecoinToUSD')->times(1)->andReturn(1000);
+		$account->setConverter($converter);
 		$msg = $account->displayAmount('USD');
 		$this->assertContains('You have 1000 USD', $msg);
 	}
