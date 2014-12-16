@@ -1,7 +1,5 @@
 <?php namespace LaraBank;
 
-use LaraBank\Converter;
-
 class Account {
 	protected $accountNumber;
 	protected $userName;
@@ -17,10 +15,10 @@ class Account {
 		}
 	}
 
-	public function setConverter(Converter $converter)
-	{
-		$this->converter = $converter;
-	}
+	// public function setConverter(Converter $converter)
+	// {
+	// 	$this->converter = $converter;
+	// }
 
 	public function getDogecoinsAmount()
 	{
@@ -29,28 +27,32 @@ class Account {
 
 	public function displayAmount($type = 'dogecoins')
 	{
-		if ($this->dogecoins === 0) {
-			return 'Sorry, your account is empty at the moment';
-		}
-		if ($type === 'USD') {
-			$usd = $this->converter->convertDogecoinToUSD($this->dogecoins);
-			return "You have $usd USD";
-		}
-		return "You have {$this->dogecoins} dogecoins";
+		/**
+		 * Write Code Here for Exercise 1
+		 */
 	}
 
 	public function deposit($amount)
 	{
-		if ( ! is_numeric($amount)) {
-			throw new \InvalidArgumentException('Hey! give me a number!');
-		}
-
-		if ($amount < 0)
-		{
-			return;
-		}
+		/**
+		 * Write Code Here for Exercise 1 Extra Credit
+		 */
 
 		$this->dogecoins = $this->dogecoins + $amount;
 	}
 
+	public function canConvert($type) {
+		/**
+		 * Write Code Here for Exercise 2
+		 */
+	}
+
 }
+
+/************************
+ * Copy and Paste Code
+ ************************/
+// if ($type === 'USD') {
+// 	$usd = $this->converter->convert($this->dogecoins);
+// 	return "You have $usd USD";
+// }

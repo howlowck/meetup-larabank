@@ -8,7 +8,7 @@ class Converter {
         $this->dogecoinToUSD = $rate;
 	}
 
-	public function convertDogecoinToUSD($amount)
+	public function convert($amount)
 	{
 		return $amount * $this->dogecoinToUSD;
 	}
