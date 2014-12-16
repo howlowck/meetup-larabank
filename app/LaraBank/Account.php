@@ -38,7 +38,7 @@ class Account {
 		 * Write Code Here for Exercise 1 Extra Credit
 		 */
 
-		$this->dogecoins = $this->dogecoins + $amount;
+		// $this->dogecoins = $this->dogecoins + $amount;
 	}
 
 	public function canConvert($type) {
